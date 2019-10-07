@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import Update from 'modules/basic/Update.vue'
 import Header from "components/frame/Header.vue";
 import AppBody from "components/frame/Body.vue";
 

@@ -43,7 +43,7 @@ export default {
         // sessionStorage.setItem("Username",null)
         // sessionStorage.setItem("Password",null)
         // sessionStorage.setItem("Email",null)
-        sessionStorage.clear()
+        sessionStorage.clear();
         ROUTER.push('/login')
     },
     editProfile() {

@@ -2,7 +2,7 @@
      <div id="background" style="padding-top:90px;">
         <center>
              <div id="divLogin" class="col-sm-3 my-sm-5 border rounded" style="margin-left:0.5%">
-                 <form class="container" @submit="onSubmit">
+                 <form class="container">
                    <br>
                      <center>
                          <h1>Logout?</h1>
@@ -12,7 +12,6 @@
                             <button class="btn btn-primary" @click="logout" >Yes</button>
                             <button class="btn btn-primary" @click="dashboard" >No</button>
                      </div><br>
-                     <button id="login" class="btn btn-primary btn-lg" type="submit">Login</button>
                      <br>
                      <br>
                  </form>
@@ -35,8 +34,6 @@ export default {
             ROUTER.push('/dashboard')
         }
     }
-
-
 }
 
 

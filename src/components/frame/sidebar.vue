@@ -45,7 +45,7 @@
                         // ]
                     },
                     {
-                        href: '/login',
+                        href: '/logout',
                         title: 'Log Out',
                         icon: 'fa fa-user',
                         //methods: AUTH.logout()
