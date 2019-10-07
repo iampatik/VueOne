@@ -23,36 +23,28 @@ export default {
         ROUTER.push('/login')
     },
     login(username, password) {
+        var count = 0;
         for (let i = 0; i < this.registeredUser.length; i++) {
             if (this.registeredUser[i].username === username && this.registeredUser[i].password === password) {
                 this.currentLogged = this.registeredUser[i]
                 return this.registeredUser[i]
             } else {
-                alert("Email or Password is incorrect!")
+                count++
+                
             }
+        }
+        if(count == this.registeredUser.length){
+            alert("Email or Password is incorrect!")
         }
         return null
     },
     logout() {
         this.user = null
-        sessionStorage.getItem("Username",null)
+        // sessionStorage.setItem("Username",null)
+        // sessionStorage.setItem("Password",null)
+        // sessionStorage.setItem("Email",null)
+        sessionStorage.clear()
         ROUTER.push('/login')
-    },
-    addCourse(course, year) {
-        this.courses.push({
-            course: course,
-            year: year,
-        });
-            var p = JSON.parse(JSON.stringify(this.courses))
-            
-    },
-    getCourse(course) {
-        for (let i = 0; i < this.courses.length - 1; i++) {
-            var p = JSON.parse(JSON.stringify(this.courses[i]))
-            return course = i
-            ;
-        }
-
     },
     editProfile() {
         ROUTER.push('/edit')

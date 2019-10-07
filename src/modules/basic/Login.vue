@@ -45,11 +45,20 @@ export default {
     onSubmit (evt) {
       evt.preventDefault();
       let user = AUTH.login(this.form.username,this.form.password);
-      AUTH.setUser(user);
-      if(user!==null){
-        ROUTER.push('/dashboard')
+      if(this.form.username === "" || this.form.password === ""){
+        alert("Please fill up first!")
       }
-      AUTH.login(this.form.username, this.form.password)
+      else{
+        alert("Logged in successfully!")
+        AUTH.setUser(user);
+        if(user!==null){
+        ROUTER.push('/dashboard')
+        
+      }
+      }        
+      
+      
+      //AUTH.login(this.form.username, this.form.password)
     }
     // ,
     // login(){
