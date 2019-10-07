@@ -3,7 +3,6 @@
         <div id="parts" v-if="auth.user!==null">
             <Sidebar id="nav"></Sidebar>
             <transition>
-                
                 <router-view></router-view>
             </transition>
         </div>

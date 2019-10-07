@@ -3,6 +3,7 @@ import ROUTER from 'router';
 export default {
     user: null,
     registeredUser: [],
+    currentLogged: [],
     courses: [],
     setUser(user) {
         this.user = user
@@ -24,6 +25,7 @@ export default {
     login(username, password) {
         for (let i = 0; i < this.registeredUser.length; i++) {
             if (this.registeredUser[i].username === username && this.registeredUser[i].password === password) {
+                this.currentLogged = this.registeredUser[i]
                 return this.registeredUser[i]
             } else {
                 alert("Email or Password is incorrect!")
@@ -55,8 +57,17 @@ export default {
     editProfile() {
         ROUTER.push('/edit')
     },
-    save(){
-        this.user = null;
+    save(username,email,password){
+        for(var i = 0; i<this.registeredUser.length;i++){
+            if(this.registeredUser[i].username === this.currentLogged.username){
+                this.registeredUser[i].username = username
+                this.registeredUser[i].email = email
+                this.registeredUser[i].password = password
+                this.currentLogged.username = username
+                this.currentLogged.email = email
+                this.currentLogged.password = password
+            }
+        }
         ROUTER.push('/personalinformation');
     },
     onsubmit(){

@@ -1,11 +1,11 @@
 <template>
-    <div id="sidebar">
-        <sidebar-menu :src="require('assets/user.png')" :menu="menu" />
+    <div>
+        <sidebar-menu id="sidebar" :src="require('assets/user.png')" :menu="menu" />
     </div>
 </template>
 <style scoped>
     #sidebar{
-        height: 96%;
+        height: 93%;
         margin-top: 56px;
     }
 </style>

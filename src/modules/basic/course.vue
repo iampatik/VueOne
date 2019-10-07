@@ -30,14 +30,11 @@
               <input v-model="infos.room" id="room" required placeholder="Enter Room" type="text" class="form-control"/>
               <span></span><br><br><br>
             </div>
-            <div><br>
-            <input v-model="delInfo.delCourse"/>
-            </div>
             <button class="btn btn-primary btn-lg" @click="addItem">Add Subject</button><br><br>
           </form>
         </div>
       </div>
-      <div class="col-sm-5 my-sm-5 col-md-5 border rounder" stacked style="margin-left:20px;overflow:auto">
+      <div class="col-sm-6 my-sm-5 col-md-6 border rounder" stacked style="margin-left:20px;overflow:auto">
         <div class="container">
           <div>
           <!-- <b-card  id="card1"  style="max-width: 60rem;overflow:auto;"> -->
@@ -108,21 +105,28 @@ export default {
       time: this.infos.time,
       day: this.infos.day,
       room: this.infos.room
-    };
+      };
+      if( this.infos.subject === "" || this.infos.teacher === "" || this.infos.time === "" || this.infos.day === "" || this.infos.room === ""){
+        alert("Please Provide Inputs!!");
+      }else{
       this.rows.push( object )
       this.infos.subject = ""
       this.infos.teacher = ""
       this.infos.time = ""
       this.infos.day= ""
       this.infos.room = ""
+      }
     },
     remove(){
-      for(var i = 0; i<this.rows.length; i++){
-        if(this.rows[i].course === this.delInfo.delCourse){
-          this.rows.splice(this.rows.indexOf(this.rows[i]),1)
+      var object = {
+      subject: this.infos.subject,
+      teacher: this.infos.teacher,
+      time: this.infos.time,
+      day: this.infos.day,
+      room: this.infos.room
+    };
+    this.rows.splice(object,1)
         }
       }
-    }
-  }
 };
 </script>  
